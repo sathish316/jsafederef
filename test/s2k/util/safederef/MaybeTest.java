@@ -6,7 +6,9 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
+import s2k.util.safederef.testmodels.Collar;
 import s2k.util.safederef.testmodels.Dog;
+import s2k.util.safederef.testmodels.Tag;
 
 public class MaybeTest {
 
@@ -21,6 +23,14 @@ public class MaybeTest {
 	public void nothingShouldRepresentNullObject(){
 		Nothing<Dog> none = new Nothing(Dog.class);
 		assertTrue(none.value() instanceof Dog);
-		assertNull(none.value().collar());
+	}
+	
+	@Test
+	public void nothingShouldRepresentNullObjectStubbedDeeply(){
+		Nothing<Dog> none = new Nothing(Dog.class);
+		assertTrue(none.value() instanceof Dog);
+		assertTrue(none.value().collar() instanceof Collar);
+		assertTrue(none.value().collar().tag() instanceof Tag);
+		assertNull(none.value().collar().tag().name());
 	}
 }
