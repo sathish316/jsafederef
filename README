@@ -3,7 +3,7 @@ jSafeDeref is inspired by Groovy's ?. operator
 Chaining method calls is commonly used in most languages:
 dog.collar().tag().name()
 
-But this is prone to NullPointerException in Java if collar is null or tag is null. Adding null checks everywhere makes the code horrible. Even in Ruby, you get the error message Undefined method 'tag' for nil:NilClass if collar is null. Fortunately, its easier to fix in dynamic languages like Ruby because NilClass is open.
+But this is prone to NullPointerException in Java if collar is null or tag is null. Adding null checks everywhere makes the code horrible. Even in Ruby, you get the error message Undefined method 'tag' for nil:NilClass if collar is null. Fortunately, in dynamic languages like Ruby nil behavior can be changed because NilClass is open.
 
 class NilClass
 	def method_missing(method_id)
@@ -17,6 +17,5 @@ dog.collar?.tag?.name
 
 However to acheive this in Java, we need the notion of Nothing value. Maybe monad is used here to achieve the notion of Nothing or Some value [http://www.irekjozwiak.com/entry/2009/06/13/Monads-for-Java-C---programmers.html]. 
 
-Nothing cannot simply throw exception when its value is accessed. 
-Like the Ruby implementation, Nothing returns a dynamic proxy which returns null for all invocations. Creating a Mock object has the same effect. Libraries like Mockito provide deep stubbing which can be used to chain without null checks indefinitely. 
-It's a little odd to use a Mocking library in Production code. But it results in relatively small code for achieving this feat in a statically typed language like Java.
+Nothing cannot simply throw exception when its value is accessed. Nothing returns a dynamic proxy which returns null for all invocations. Creating a Mock object has the same effect. Libraries like Mockito provide deep stubbing which can be used to chain without null checks indefinitely. 
+It's a little odd to use a Mocking library in Production code. But it results in relatively small code for achieving this in a statically typed language like Java.
