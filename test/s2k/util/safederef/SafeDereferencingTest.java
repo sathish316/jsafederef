@@ -11,7 +11,7 @@ public class SafeDereferencingTest {
 
 	@Test
 	public void shouldSafelyDereferenceMethodChaining(){
-		Dog dog = new Dog("Jimmy");
+		Dog dog = new Dog();
 		Collar collar = new Collar();
 		dog.setCollar(collar);
 
@@ -21,7 +21,7 @@ public class SafeDereferencingTest {
 
 	@Test
 	public void shouldSafelyDereferenceMethodChainingForAnyLevel(){
-		Dog dog = new Dog("Jimmy");
+		Dog dog = new Dog();
 
 		String name = dog.collar().tag().name();
 		assertNull(name);
