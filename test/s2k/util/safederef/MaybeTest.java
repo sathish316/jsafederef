@@ -1,6 +1,8 @@
 package s2k.util.safederef;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -15,9 +17,10 @@ public class MaybeTest {
 		assertEquals(object, maybe.value());
 	}
 	
-	@Test(expected = IllegalStateException.class)
-	public void nothingShouldRepresentNoValue(){
-		Nothing none = new Nothing();
-		none.value();
+	@Test
+	public void nothingShouldRepresentNullObject(){
+		Nothing<Dog> none = new Nothing(Dog.class);
+		assertTrue(none.value() instanceof Dog);
+		assertNull(none.value().collar());
 	}
 }

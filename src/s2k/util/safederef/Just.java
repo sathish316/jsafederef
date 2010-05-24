@@ -1,5 +1,6 @@
 package s2k.util.safederef;
 
+
 public class Just<T> implements Maybe<T>{
 	
 	private T value;	

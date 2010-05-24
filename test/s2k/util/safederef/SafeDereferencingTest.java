@@ -9,7 +9,7 @@ import s2k.util.safederef.testmodels.Dog;
 
 public class SafeDereferencingTest {
 
-	@Test(expected = IllegalStateException.class)
+	@Test
 	public void shouldSafelyDereferenceMethodChaining(){
 		Dog dog = new Dog();
 		Collar collar = new Collar();
@@ -19,7 +19,7 @@ public class SafeDereferencingTest {
 		assertNull(name);
 	}
 
-	@Test(expected = IllegalStateException.class)
+	@Test
 	public void shouldSafelyDereferenceMethodChainingForAnyLevel(){
 		Dog dog = new Dog();
 

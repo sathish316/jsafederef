@@ -9,7 +9,7 @@ public class Collar_Maybe extends CollarBase{
 	public Maybe<Tag> _tag() {
 		Tag object = super.tag();
 		if(object == null)
-			return new Nothing();
+			return new Nothing(Tag.class);
 		return new Just(object);
 	}
 }

@@ -9,7 +9,7 @@ public class Dog_Maybe extends DogBase{
 	public Maybe<Collar> _collar() {
 		Collar object = super.collar();
 		if(object == null)
-			return new Nothing();
+			return new Nothing(Collar.class);
 		return new Just(object);
 	}
 }
