@@ -18,4 +18,4 @@ dog.collar?.tag?.name
 However to acheive this in Java, we need the notion of Nothing value. Maybe monad is used here to achieve the notion of Nothing or Some value [http://www.irekjozwiak.com/entry/2009/06/13/Monads-for-Java-C---programmers.html]. 
 
 Nothing cannot simply throw exception when its value is accessed. Nothing returns a dynamic proxy which returns null for all invocations. Creating a Mock object has the same effect. Libraries like Mockito provide deep stubbing which can be used to chain without null checks indefinitely. 
-It's a little odd to use a Mocking library in Production code. But it results in relatively small code for achieving this in a statically typed language like Java.
+It's a little odd to use a Mocking library in code. But it results in relatively small code for achieving this in a statically typed language like Java.
