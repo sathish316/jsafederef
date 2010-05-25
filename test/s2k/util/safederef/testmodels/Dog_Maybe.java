@@ -6,7 +6,7 @@ import s2k.util.safederef.Nothing;
 
 public class Dog_Maybe extends DogBase{
 
-	public Maybe<Collar> _collar() {
+	public Maybe<Collar> maybe_collar() {
 		Collar object = super.collar();
 		if(object == null)
 			return new Nothing(Collar.class);

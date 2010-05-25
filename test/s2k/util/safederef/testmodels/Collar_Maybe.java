@@ -6,7 +6,7 @@ import s2k.util.safederef.Nothing;
 
 public class Collar_Maybe extends CollarBase{
 
-	public Maybe<Tag> _tag() {
+	public Maybe<Tag> maybe_tag() {
 		Tag object = super.tag();
 		if(object == null)
 			return new Nothing(Tag.class);

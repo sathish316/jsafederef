@@ -29,8 +29,8 @@ public class MaybeTest {
 	public void nothingShouldRepresentNullObjectStubbedDeeply(){
 		Nothing<Dog> none = new Nothing(Dog.class);
 		assertTrue(none.value() instanceof Dog);
-		assertTrue(none.value().collar() instanceof Collar);
-		assertTrue(none.value().collar().tag() instanceof Tag);
-		assertNull(none.value().collar().tag().name());
+		assertTrue(none.value()._collar() instanceof Collar);
+		assertTrue(none.value()._collar()._tag() instanceof Tag);
+		assertNull(none.value()._collar()._tag().name());
 	}
 }
